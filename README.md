@@ -1,3 +1,7 @@
+```command
+yarn add @hrdtbs/react-code
+```
+
 See [prismjs](https://prismjs.com/).
 
 [Supported languages](https://prismjs.com/#supported-languages)
