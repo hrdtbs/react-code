@@ -17,20 +17,22 @@ export const CodeInline: FunctionComponent<CodeProps> = ({ children, language = 
             Prism.highlightElement(current)
         }
     }, [codeRef])
+
+    const space = children.search(/\S/) - 1
     return (
-        <code ref={codeRef} className={`language-${language || lang}`}>
+        <code {...props} ref={codeRef} className={`language-${language || lang}`}>
             {children
                 .split("\n")
-                .map(line => line.slice(children.search(/\S/) - 1))
+                .map(line => line.slice(space))
                 .slice(1)
                 .join("\n")}
         </code>
     )
 }
 
-export const Code: FunctionComponent<CodeProps> = props => {
+export const Code: FunctionComponent<CodeProps> = ({ style, className, ...props }) => {
     return (
-        <pre>
+        <pre {...{ style, className }}>
             <CodeInline {...props} />
         </pre>
     )
