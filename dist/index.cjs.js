@@ -46,7 +46,7 @@ function __rest(s, e) {
 }
 
 var CodeInline = function (_a) {
-    var children = _a.children, _b = _a.language, language = _b === void 0 ? "javascript" : _b, props = __rest(_a, ["children", "language"]);
+    var children = _a.children, _b = _a.language, language = _b === void 0 ? "javascript" : _b, lang = _a.lang, props = __rest(_a, ["children", "language", "lang"]);
     var codeRef = React.useRef(null);
     React.useEffect(function () {
         var current = codeRef.current;
@@ -54,14 +54,16 @@ var CodeInline = function (_a) {
             Prism.highlightElement(current);
         }
     }, [codeRef]);
-    return (React__default.createElement("code", { ref: codeRef, className: "language-" + language }, children
+    var space = children.search(/\S/) - 1;
+    return (React__default.createElement("code", __assign({}, props, { ref: codeRef, className: "language-" + (language || lang) }), children
         .split("\n")
-        .map(function (line) { return line.slice(children.search(/\S/) - 1); })
+        .map(function (line) { return line.slice(space); })
         .slice(1)
         .join("\n")));
 };
-var Code = function (props) {
-    return (React__default.createElement("pre", null,
+var Code = function (_a) {
+    var style = _a.style, className = _a.className, props = __rest(_a, ["style", "className"]);
+    return (React__default.createElement("pre", __assign({}, { style: style, className: className }),
         React__default.createElement(CodeInline, __assign({}, props))));
 };
 
