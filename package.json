@@ -57,7 +57,7 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook -c .storybook",
         "update": "yarn upgrade-interactive --latest",
-        "lint:ts": "eslint ./src/**/*.ts ./src/**/*.tsx  --cache",
+        "lint:ts": "eslint ./src/**/*.tsx  --cache",
         "lint:js": "eslint rollup.config.js jest.config.js --cache",
         "lint:json": "prettier '*.json'",
         "lint:fix:ts": "yarn lint:ts --fix",
