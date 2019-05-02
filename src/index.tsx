@@ -38,14 +38,15 @@ export const Code: FunctionComponent<CodeProps> = ({ style, className, ...props 
     )
 }
 
-export const CodeCollapsible: FunctionComponent<CodeProps & { summary: string }> = ({
+export const CodeCollapsible: FunctionComponent<CodeProps & { summary: string; open: boolean }> = ({
     summary,
+    open,
     style,
     className,
     ...props
 }) => {
     return (
-        <details {...{ style, className }}>
+        <details {...{ style, className, open }}>
             <summary>{summary}</summary>
             <Code {...props} />
         </details>
