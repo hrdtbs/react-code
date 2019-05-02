@@ -2,6 +2,7 @@ node_modules
 .rpt2_cache
 .eslintcache
 
-# parcel 
+# parcel
 .cache
 build
+dist
