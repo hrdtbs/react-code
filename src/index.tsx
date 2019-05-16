@@ -18,7 +18,7 @@ export const CodeInline: FunctionComponent<CodeProps> = ({ children, language = 
         }
     }, [codeRef, children])
 
-    const space = children.search(/\S/) - 1
+    const space = children.search(/\S/) === 0 ? 0 : children.search(/\S/) - 1
     return (
         <code {...props} ref={codeRef} className={`language-${language || lang}`}>
             {children
