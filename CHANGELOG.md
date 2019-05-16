@@ -1,95 +1,51 @@
-# Change Log
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
-
-## [Unreleased]
-### Added
-- MapPin
-- Modal
-- NavBar
-- Notify
-- PageHeader
-- Select
-- SubTitle
-- Tab
-- Table
-- Upload
-
-- DatePicker
-- Steps
-- Input
-- Icon
-- Radio
-- Pagination
-
-### Changed
-- Checkbox, アニメーションが適当なので修正する
+## [1.2.3](https://github.com/hrdtbs/react-code/compare/v1.2.2...v1.2.3) (2019-05-16)
 
 
-## 0.0.91 -2019-04-09
-### Fixed
-- CellNormal
+### Bug Fixes
 
-## 0.0.9 -2019-04-09
+* **CodeCollapsible:** Fix type ([31e954e](https://github.com/hrdtbs/react-code/commit/31e954e))
 
-### Added
-- Button
-  - Support icon type
-- Theme
-  - gray dark color
-  - createTheme
 
-### Changed 
-- Theme
-  - error color
 
-## 0.0.8 -2019-04-08
+## [1.2.2](https://github.com/hrdtbs/react-code/compare/v1.1.2...v1.2.2) (2019-05-16)
 
-### Added
-- Icon
-- Typography
-  - Headline2
-  - Headline3
-  - Small
 
-### Fixed
-- Button
-  -  Fix onclicked animation
+### Bug Fixes
 
-## 0.0.7 -2019-04-05
-### Changed
--  Calender
-  - prevClickしたら前の月に、nextClickしたら次の月、thisMonthClickしたら今月のような当たり前の挙動はComponent内に実装した。
-  - propsで渡したonPrevClickなどの関数はyear, month（1はじまり）を`{year, month}`として受け取る。
-  - minDate, maxDateを渡した場合、それ以前それ以降の日付はブロックされる。
-  - year及びmonthをdefaultYear, defaultMonthに置き換えた。これらを指定しない場合、現在の年月が指定される。
-- InputNumber, Add onError props
-- Box, Allow prop types of string 
+* **CodeInline:** Make space be not negative ([#33](https://github.com/hrdtbs/react-code/issues/33)) ([3ceb6c9](https://github.com/hrdtbs/react-code/commit/3ceb6c9))
 
-## 0.0.2 -2019-04-04
-### Added
-- CHANGELOG.md
-- Box
-- Typography
-  - Text
-  - Subtitle
-  - Title
 
-### Changed
-- Integrate ButtonCircle, ButtonRound, ButtonFill, ... into Button
+### Features
 
-## 0.0.1 - 2019-04-03
-### Added 
-- Button
-- ButtonCircle
-- Calendar
-- Checkbox
-- FlexColumn
-- FlexContainer
-- FormTitle
-- Image
-- Input
-- InputNumber
-- InputZipCode
+* **CodeInline:** Include children in useEffect ([#32](https://github.com/hrdtbs/react-code/issues/32)) ([c2cc8ea](https://github.com/hrdtbs/react-code/commit/c2cc8ea))
+
+
+
+## [1.1.2](https://github.com/hrdtbs/react-code/compare/v1.1.1...v1.1.2) (2019-05-02)
+
+
+### Features
+
+* **CodeCollapsoble:** Add open prop ([d6e5766](https://github.com/hrdtbs/react-code/commit/d6e5766))
+
+
+
+## [1.1.1](https://github.com/hrdtbs/react-code/compare/v1.1.0...v1.1.1) (2019-05-02)
+
+
+### Bug Fixes
+
+* **dependencies:** Add prismjs in peerDependencies ([e8f72ba](https://github.com/hrdtbs/react-code/commit/e8f72ba))
+
+
+
+# [1.1.0](https://github.com/hrdtbs/react-code/compare/7e07244...v1.1.0) (2019-05-02)
+
+
+### Features
+
+* **CodeCollapsible:** Add ([463fe32](https://github.com/hrdtbs/react-code/commit/463fe32))
+* first commit ([7e07244](https://github.com/hrdtbs/react-code/commit/7e07244))
+
+
+
