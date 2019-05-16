@@ -13,10 +13,10 @@ export const CodeInline: FunctionComponent<CodeProps> = ({ children, language = 
 
     useEffect(() => {
         const { current } = codeRef
-        if (current !== null) {
+        if (current !== null && children !== "") {
             Prism.highlightElement(current)
         }
-    }, [codeRef])
+    }, [codeRef, children])
 
     const space = children.search(/\S/) - 1
     return (
