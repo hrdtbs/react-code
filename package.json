@@ -67,7 +67,7 @@
         "lint": "run-p -l -n -c --aggregate-output lint:*",
         "lint:fix": "run-p -l -n -c --aggregate-output lint:fix:*",
         "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
-        "release": "yarn build && yarn version && npm publish && git push origin --tags"
+        "release": "yarn build && yarn version && npm publish && git push && git push origin --tags"
     },
     "husky": {
         "hooks": {
