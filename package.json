@@ -1,6 +1,6 @@
 {
     "name": "@hrdtbs/react-code",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "repository": "https://github.com/hrdtbs/react-code.git",
     "license": "MIT",
     "main": "dist/index.cjs.js",
@@ -31,8 +31,8 @@
         "babel-loader": "8.0.6",
         "eslint": "5.16.0",
         "eslint-config-prettier": "4.2.0",
-        "eslint-plugin-react": "7.13.0",
         "eslint-plugin-prettier": "3.1.0",
+        "eslint-plugin-react": "7.13.0",
         "eslint-plugin-react-hooks": "1.6.0",
         "eslint-plugin-sort-imports-es6-autofix": "0.4.0",
         "husky": "2.2.0",
