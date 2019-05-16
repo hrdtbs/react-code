@@ -2,30 +2,38 @@ import "prismjs/themes/prism-tomorrow.css"
 import Prism from "prismjs"
 import React, { FunctionComponent, useEffect, useRef } from "react"
 
+export const useCode = (language: string): React.RefObject<HTMLElement> => {
+    const ref = useRef<HTMLElement>(null)
+
+    useEffect(() => {
+        const { current } = ref
+        if (current !== null) {
+            current.classList.add(`language-${language}`)
+            Prism.highlightElement(current)
+        }
+    }, [language, ref])
+
+    return ref
+}
+
 interface CodeProps extends React.DetailsHTMLAttributes<HTMLDetailsElement> {
     children: string
     language?: string
-    lang?: string
 }
 
-export const CodeInline: FunctionComponent<CodeProps> = ({ children, language = "javascript", lang, ...props }) => {
-    const codeRef = useRef<HTMLElement>(null)
+export const formatCode = (source: string): string => {
+    const lines = source.split(/\n/).filter(e => !!e)
+    const space = lines[0].length - lines[0].trimStart().length
+    return lines.map(line => line.slice(space)).join("\n")
+}
 
-    useEffect(() => {
-        const { current } = codeRef
-        if (current !== null && children !== "") {
-            Prism.highlightElement(current)
-        }
-    }, [codeRef, children])
+export const CodeInline: FunctionComponent<CodeProps> = ({ children, language = "javascript", ...props }) => {
+    const ref = useCode(language)
+    const code = formatCode(children)
 
-    const space = children.search(/\S/) === 0 ? 0 : children.search(/\S/) - 1
     return (
-        <code {...props} ref={codeRef} className={`language-${language || lang}`}>
-            {children
-                .split("\n")
-                .map(line => line.slice(space))
-                .slice(1)
-                .join("\n")}
+        <code {...props} {...{ ref }}>
+            {code}
         </code>
     )
 }
@@ -38,7 +46,7 @@ export const Code: FunctionComponent<CodeProps> = ({ style, className, ...props 
     )
 }
 
-export const CodeCollapsible: FunctionComponent<CodeProps & { summary?: string; open?: boolean }> = ({
+export const CodeCollapse: FunctionComponent<CodeProps & { summary?: string; open?: boolean }> = ({
     summary,
     open,
     style,
