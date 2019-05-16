@@ -1,3 +1,12 @@
+# [2.0.0](https://github.com/hrdtbs/react-code/compare/v1.2.3...v2.0.0) (2019-05-16)
+
+
+### Features
+
+* **Code:** Update ([0639648](https://github.com/hrdtbs/react-code/commit/0639648))
+
+
+
 ## [1.2.3](https://github.com/hrdtbs/react-code/compare/v1.2.2...v1.2.3) (2019-05-16)
 
 
