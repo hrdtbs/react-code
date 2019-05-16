@@ -38,7 +38,7 @@ export const Code: FunctionComponent<CodeProps> = ({ style, className, ...props 
     )
 }
 
-export const CodeCollapsible: FunctionComponent<CodeProps & { summary: string; open: boolean }> = ({
+export const CodeCollapsible: FunctionComponent<CodeProps & { summary?: string; open?: boolean }> = ({
     summary,
     open,
     style,
