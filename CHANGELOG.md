@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/hrdtbs/react-code/compare/v2.0.0...v2.1.0) (2019-07-31)
+
+
+### Features
+
+* add support of empty code ([0d1f7f6](https://github.com/hrdtbs/react-code/commit/0d1f7f6))
+
+
+
 # [2.0.0](https://github.com/hrdtbs/react-code/compare/v1.2.3...v2.0.0) (2019-05-16)
 
 
