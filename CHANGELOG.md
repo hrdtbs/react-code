@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/hrdtbs/react-code/compare/v2.1.0...v2.2.0) (2019-07-31)
+
+
+### Bug Fixes
+
+* fix formatCode ([1bdfb1c](https://github.com/hrdtbs/react-code/commit/1bdfb1c))
+
+
+
 # [2.1.0](https://github.com/hrdtbs/react-code/compare/v2.0.0...v2.1.0) (2019-07-31)
 
 
