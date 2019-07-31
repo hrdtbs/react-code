@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/hrdtbs/react-code/compare/v2.2.0...v2.3.0) (2019-07-31)
+
+
+### Bug Fixes
+
+* fix CodeInline ([544c585](https://github.com/hrdtbs/react-code/commit/544c585))
+
+
+
 # [2.2.0](https://github.com/hrdtbs/react-code/compare/v2.1.0...v2.2.0) (2019-07-31)
 
 
