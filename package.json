@@ -75,22 +75,17 @@
         }
     },
     "lint-staged": {
-        "linters": {
-            "*.{js,jsx}": [
-                "yarn lint:fix:js",
-                "git add"
-            ],
-            "*.{ts,tsx}": [
-                "yarn lint:fix:ts",
-                "git add"
-            ],
-            "*.{json}": [
-                "yarn lint:fix:json",
-                "git add"
-            ]
-        },
-        "ignore": [
-            "dist/**/*"
+        "*.{js,jsx}": [
+            "yarn lint:fix:js",
+            "git add"
+        ],
+        "*.{ts,tsx}": [
+            "yarn lint:fix:ts",
+            "git add"
+        ],
+        "*.{json}": [
+            "yarn lint:fix:json",
+            "git add"
         ]
     },
     "dependencies": {

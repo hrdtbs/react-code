@@ -22,6 +22,7 @@ interface CodeProps extends React.DetailsHTMLAttributes<HTMLDetailsElement> {
 }
 
 export const formatCode = (source: string): string => {
+    if (source) return ""
     const lines = source.split(/\n/).filter(e => !!e)
     const space = lines[0].length - lines[0].trimStart().length
     return lines.map(line => line.slice(space)).join("\n")
