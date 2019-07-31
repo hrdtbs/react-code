@@ -1,65 +1,74 @@
 {
-  "extends": [
-    ":ignoreModulesAndTests",
-    ":label(renovate)",
-    ":prConcurrentLimit10",
-    ":prNotPending",
-    ":timezone(Asia/Tokyo)",
-    "group:monorepos"
-  ],
-  "npm": {
     "extends": [
-      ":automergePatch",
-      ":noUnscheduledUpdates",
-      ":separatePatchReleases",
-      ":unpublishSafe",
-      "helpers:disableTypesNodeMajor"
+        ":ignoreModulesAndTests",
+        ":label(renovate)",
+        ":prConcurrentLimit10",
+        ":prNotPending",
+        ":timezone(Asia/Tokyo)",
+        "group:monorepos"
     ],
-    "schedule": ["after 9pm", "before 9am"],
-    "rangeStrategy": "bump",
-    "packageRules": [
-      {
-        "groupName": "ESLint and Prettier",
-        "packageNames": ["eslint", "prettier"],
+    "npm": {
+        "extends": [
+            ":automergePatch",
+            ":noUnscheduledUpdates",
+            ":separatePatchReleases",
+            ":unpublishSafe",
+            "helpers:disableTypesNodeMajor"
+        ],
+        "schedule": ["after 9pm", "before 9am"],
+        "rangeStrategy": "bump",
+        "packageRules": [
+            {
+                "groupName": "ESLint and Prettier",
+                "packageNames": ["eslint", "prettier"],
+                "automerge": true,
+                "packagePatterns": ["^eslint-config-", "^eslint-plugin-"]
+            },
+            {
+                "groupName": "Rollup",
+                "packageNames": ["rollup"],
+                "automerge": true,
+                "packagePatterns": ["^rollup-plugin-"]
+            },
+            {
+                "groupName": "Types",
+                "automerge": true,
+                "packagePatterns": ["^@types/"]
+            },
+            {
+                "description": "automerge minor updates of widely used libraries in devDeps",
+                "updateTypes": ["minor"],
+                "depTypeList": ["devDependencies"],
+                "automerge": true,
+                "packageNames": [
+                    "cnventional-changelog-cli",
+                    "rimraf",
+                    "jest",
+                    "npm-run-all",
+                    "lint-staged",
+                    "husky",
+                    "ts-jest",
+                    "lint-staged"
+                ]
+            }
+        ]
+    },
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": ["before 9am on the first day of the month"]
+    },
+    "circleci": {
+        "enabled": true,
         "automerge": true,
-        "packagePatterns": ["^eslint-config-", "^eslint-plugin-"]
-      },
-      {
-          "groupName": "Rollup",
-          "packageNames": ["rollup"],
-          "automerge": true,
-          "packagePatterns": ["^rollup-plugin-"]
-      },
-      {
-          "groupName":"Types",
-          "automerge": true,
-          "packagePatterns":["^@types/"]
-      },
-      {
-        "description": "automerge minor updates of widely used libraries in devDeps",
-        "updateTypes": ["minor"],
-        "depTypeList": ["devDependencies"],
-        "automerge": true,
-        "packageNames": ["cnventional-changelog-cli","rimraf", "jest", "npm-run-all", "lint-staged", "husky","ts-jest", "lint-staged"]
-      }
-    ]
-  },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 9am on the first day of the month"]
-  },
-  "circleci": {
-    "enabled": true,
-    "automerge": true,
-    "automergeType": "branch",
-    "schedule": ["before 9am on Friday"],
-    "semanticCommitScope": "docker",
-    "semanticCommitType": "ci",
-    "packageRules": [
-      {
-        "groupName": "Node Docker digests in CircleCI",
-        "packageNames": ["circleci/node", "node"]
-      }
-    ]
-  }
+        "automergeType": "branch",
+        "schedule": ["before 9am on Friday"],
+        "semanticCommitScope": "docker",
+        "semanticCommitType": "ci",
+        "packageRules": [
+            {
+                "groupName": "Node Docker digests in CircleCI",
+                "packageNames": ["circleci/node", "node"]
+            }
+        ]
+    }
 }
