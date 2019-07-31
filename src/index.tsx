@@ -31,11 +31,11 @@ export const CodeInline: FunctionComponent<CodeProps> = ({ children, language = 
     const ref = useCode(language)
     const code = formatCode(children)
 
-    return (
+    return code ? (
         <code {...props} {...{ ref }}>
             {code}
         </code>
-    )
+    ) : null
 }
 
 export const Code: FunctionComponent<CodeProps> = ({ style, className, ...props }) => {
