@@ -47,7 +47,7 @@
         "rimraf": "2.7.1",
         "rollup": "2.47.0",
         "rollup-plugin-typescript2": "0.30.0",
-        "typescript": "3.6.5"
+        "typescript": "3.9.10"
     },
     "scripts": {
         "example:start": "parcel ./example/index.html --out-dir build",
