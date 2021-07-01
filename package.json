@@ -45,7 +45,7 @@
         "react": "16.9.0",
         "react-dom": "16.9.0",
         "rimraf": "2.7.1",
-        "rollup": "2.47.0",
+        "rollup": "2.52.6",
         "rollup-plugin-typescript2": "0.30.0",
         "typescript": "3.6.5"
     },
